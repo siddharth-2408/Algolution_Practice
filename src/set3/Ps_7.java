@@ -1,5 +1,8 @@
 package set3;
 
+import java.util.HashSet;
+import java.util.Vector;
+
 /**
  *
  * @author rajes
@@ -30,19 +33,22 @@ public class Ps_7
     {
         int count = 0;
         int targetSum =totalVowelCount(num,text);
-        for(int i=0;i<num.length-1;i++)
+        System.out.println(targetSum);
+        HashSet<Integer> existing = new HashSet<>();
+        for(int i=0;i<num.length;i++)
         {
-            for(int j=i+1;j<num.length;j++)
+            int rem = targetSum - num[i];
+            if(existing.contains(rem))
             {
-                if(num[i]+num[j] == targetSum)
-                    count++;
+                count++;
             }
+            existing.add(num[i]);
         }
         return count;
     }
     public static void main(String args[])
     {
-        int num[] = {7,4,2};
+        int num[] = {5,2,1,4,3};
         String[] numbers = {
             "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
             "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
