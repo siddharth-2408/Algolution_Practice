@@ -5,10 +5,27 @@
  */
 package set3;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Vector;
+
 /**
  *
  * @author rajes
  */
-public class Ps_8 {
-    
+public class Ps_8 
+{
+    public int countCombinations(int []coins,int sum)
+    {
+        int count =0;
+        
+        return count;
+    }
+    public static void main(String args[])
+    {
+        int sum = 4;
+        int coins[] = {1,2,3};
+        Ps_8 obj = new Ps_8();
+        System.out.println(obj.countCombinations(coins, sum));
+    }
 }

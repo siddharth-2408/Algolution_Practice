@@ -13,19 +13,16 @@ public class Ps_1
 {
     public static int maxSum(int []a)
     {
-        int sum=0,max_sum=0;
-        for(int i=0;i<a.length;i++)
+        //Kadane's Algo
+        if(a.length == 0)
+            return 0;
+        if(a.length == 1)
+            return a[0];
+        int sum=a[0],max_sum=a[0];
+        for(int i=1;i<a.length;i++)
         {
-            sum = a[i];
-            for(int j=i+1;j<a.length;j++)
-            {
-                if(i!=j)
-                {
-                    sum += a[j];
-                }
-                if(max_sum<sum)
-                    max_sum = sum;
-            }
+            sum = Math.max(a[i], sum + a[i]);
+            max_sum = Math.max(max_sum, sum);
         }
         return max_sum;
     }

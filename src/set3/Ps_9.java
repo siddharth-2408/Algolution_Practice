@@ -9,6 +9,6 @@ package set3;
  *
  * @author rajes
  */
-public class Ps_9 {
-    
+public class Ps_9 
+{
 }
