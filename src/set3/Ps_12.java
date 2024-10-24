@@ -5,10 +5,46 @@
  */
 package set3;
 
+import java.util.HashSet;
+import java.util.Scanner;
+
 /**
  *
  * @author rajes
  */
-public class Ps_12 {
-    
+public class Ps_12 
+{
+    public boolean isHappy(int n) 
+    {
+        if(n<1)
+            return false;
+        if(n==1)
+            return true;
+        HashSet<Integer> hashSet = new HashSet<>();
+        while(true)
+        {
+            int sum = 0;
+            while(n>0)
+            {
+                int r = n%10;
+                sum = sum+r*r;
+                n = n/10;
+            }
+            if(sum == 1)
+                return true;
+            if(hashSet.contains(sum))
+                return false;
+            hashSet.add(sum);
+            n = sum;
+        }
+    }
+    static public void main(String args[])
+    {
+        Ps_12 obj = new Ps_12();
+        int n;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter The Number: ");
+        n = scan.nextInt();
+        System.out.println(obj.isHappy(n));
+    }
 }
